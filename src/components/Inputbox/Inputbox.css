@@ -1,0 +1,41 @@
+.Inputbox {
+  border: 1px solid var(--Slate-300);
+  display: flex;
+  align-items: center;
+  border-radius: 0.1rem;
+  overflow: hidden;
+}
+.Inputbox.normal {
+  flex-direction: row;
+}
+
+.Inputbox.reverse {
+  flex-direction: row-reverse;
+}
+
+.tagInput {
+  padding: 0.5rem 1rem;
+}
+
+.inputWrapper {
+  border: 1px solid var(--Slate-300);
+  display: flex;
+  align-items: center;
+  border-radius: 0.1rem;
+  overflow: hidden;
+}
+
+input[type='number'] {
+  padding: 0.5rem;
+  /* border: 2px solid gold; */
+  width: 100%;
+}
+
+input[type='number']:focus {
+  border: 1px solid var(--lime);
+  outline: none;
+}
+
+input[type='number']:focus + .test {
+  background-color: var(--lime);
+}
