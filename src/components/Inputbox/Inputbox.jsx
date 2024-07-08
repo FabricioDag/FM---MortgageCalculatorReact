@@ -15,8 +15,8 @@ const Inputbox = ({ title, type, tag, func }) => {
     setSelected(false)
   }
 
-  const handleChange = () =>{
-    func('teste')
+  const handleChange = (e) =>{
+    func(e.target.value)
   }
   return (
     <>

@@ -10,19 +10,48 @@ function App() {
 
   const handleSubmit = () =>{
     setHasSubmited(!hasSubimited)
+    alert(mAmount)
+    alert(mTerm)
+    alert(iRate)
   }
+
+  const [mAmount, setMAmount] = useState('')
+  const changeAmount = (e) =>{
+    setMAmount(e)
+  }
+
+  const [mTerm,  setMTerm] = useState('')
+  const changeTerm = (e)=>{
+    setMTerm(e)
+  }
+
+  const [iRate, setIRate] = useState('')
+  const changeRate = (e) =>{
+    setIRate(e)
+  }
+
+  const handleClear = () =>{
+    clearInputs()
+  }
+
+  const clearInputs = () =>{
+    setMAmount('')
+    setMTerm('')
+    setIRate('')
+  }
+  
 
   return (
     <div className="App">
       <div className="calcArea">
         <h1>Mortgage Calculator</h1>
-        <button className="clearButton">Clear All</button>
+        <button className="clearButton" onClick={handleClear}>Clear All</button>
 
-        <Inputbox title="Mortgage Amount" tag="€" type="normal" />
+        <Inputbox title="Mortgage Amount" tag="€" type="normal" func={changeAmount}/>
 
-        <Inputbox title="Mortgage Term" tag="years" type="reverse" />
+        <Inputbox title="Mortgage Term" tag="years" type="reverse" func={changeTerm} />
 
-        <Inputbox title="Interest Rate" tag="%" type="reverse" />
+        <Inputbox title="Interest Rate" tag="%" type="reverse" func={changeRate} />
 
         <div className="checkBoxes">
           <p>Mortgage Type</p>
