@@ -1,10 +1,17 @@
 .Inputbox {
-  border: 1px solid var(--Slate-300);
+  /* border: 1px solid var(--Slate-300); */
   display: flex;
   align-items: center;
   border-radius: 0.1rem;
   overflow: hidden;
+  border: 2px solid rgb(5, 45, 5);
+  height: 2.5rem;
 }
+
+.Inputbox.true{
+  border: 2px solid var(--lime);
+}
+
 .Inputbox.normal {
   flex-direction: row;
 }
@@ -14,28 +21,28 @@
 }
 
 .tagInput {
-  padding: 0.5rem 1rem;
+  height: 100%;
+  padding: 0 1rem;
+  display: grid;
+  place-content: center;
 }
 
-.inputWrapper {
-  border: 1px solid var(--Slate-300);
-  display: flex;
-  align-items: center;
-  border-radius: 0.1rem;
-  overflow: hidden;
-}
-
-input[type='number'] {
-  padding: 0.5rem;
-  /* border: 2px solid gold; */
-  width: 100%;
-}
-
-input[type='number']:focus {
-  border: 1px solid var(--lime);
-  outline: none;
-}
-
-input[type='number']:focus + .test {
+.tagInput.true{
   background-color: var(--lime);
+}
+
+.inputT{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+
+.teste{
+  color: green;
+}
+
+.teste.false{
+  color: aqua;
 }

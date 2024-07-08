@@ -6,6 +6,12 @@ import illustration from './assets/images/illustration-empty.svg';
 import { Inputbox } from './components';
 
 function App() {
+  const [hasSubimited, setHasSubmited] = useState(false);
+
+  const handleSubmit = () =>{
+    setHasSubmited(!hasSubimited)
+  }
+
   return (
     <div className="App">
       <div className="calcArea">
@@ -30,7 +36,7 @@ function App() {
           </div>
         </div>
 
-        <button className="calcButton">
+        <button className="calcButton" onClick={handleSubmit}> 
           <i>
             <img src={iconCalc} alt="" />
           </i>
@@ -39,12 +45,37 @@ function App() {
       </div>
 
       <div className="resultArea">
-        <img src={illustration} alt="" />
-        <h2>Results shown here</h2>
-        <p>
-          Complete the form and click "Calculate Repayments" to see what your
-          monthly repaymants would be.
-        </p>
+        {hasSubimited ? (
+          <>
+            <img src={illustration} alt="" />
+            <h2>Results shown here</h2>
+            <p>
+              Complete the form and click "Calculate Repayments" to see what
+              your monthly repaymants would be.
+            </p>
+          </>
+        ) : (
+          <>
+            <h2>Your Results</h2>
+            <p>Your resulst are shown below based on the
+              information you provided. To adjust the
+              results, edit the form and click "Calculate
+              Repayments" again.
+            </p>
+
+            <div className="result">
+              <div className="resultTop">
+                <p>Your monthly repayments</p>
+                <h1>€1,797.74</h1>
+              </div>
+              <hr/>
+              <div className="resultBot">
+                <p>Total you'll repay over the term</p>
+                <h1>€539,797.94</h1>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

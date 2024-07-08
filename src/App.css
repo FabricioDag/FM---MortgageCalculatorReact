@@ -78,6 +78,26 @@ p {
   color: white;
 }
 
+.result {
+  background-color: rgb(0, 0, 0);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 0.3rem;
+  filter: drop-shadow(0px -3px 0px var(--lime));
+  width: 100%;
+}
+
+.resultTop h1 {
+  color: var(--lime);
+  font-size: 2.25rem;
+}
+
+.resultBot h1 {
+  color: white;
+}
+
 .calcButton {
   background-color: var(--lime);
   color: var(--Slate-900);

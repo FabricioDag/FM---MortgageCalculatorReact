@@ -1,13 +1,33 @@
 import './Inputbox.css';
 
-const Inputbox = ({ title, type, tag }) => {
+import { useState } from 'react';
+
+const Inputbox = ({ title, type, tag, func }) => {
+
+  const [selected, setSelected] = useState(false)
+  const [t, setT] = useState('')
+
+  const handleFocus = ( ) =>{
+    setSelected(true)
+  }
+
+  const handleBlur = ( ) =>{
+    setSelected(false)
+  }
+
+  const handleChange = () =>{
+    func('teste')
+  }
   return (
     <>
       <label className="inputTitle">{title}</label>
-      <div className={`Inputbox ${type}`}>
-        <div className="tagInput">{tag}</div>
-        <input type="number" />
+      <div className={`Inputbox ${type} ${selected}`}>
+        <div className={`tagInput ${selected}`}>{tag}</div>
+        <input className='inputT' type="number" onFocus={handleFocus}
+        onBlur={handleBlur} onChange={handleChange}/>
       </div>
+
+       
     </>
   );
 };
